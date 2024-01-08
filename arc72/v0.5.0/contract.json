@@ -1,0 +1,167 @@
+{
+  "name": "ARC-72",
+  "description": "High Forge Smart Contract NFT Interface",
+  "methods": [
+    {
+      "name": "arc72_approve",
+      "args": [{ "type": "address" }, { "type": "uint256" }],
+      "returns": { "type": "void" }
+    },
+    {
+      "name": "arc72_balanceOf",
+      "args": [{ "type": "address" }],
+      "returns": { "type": "uint256" },
+      "readonly": true
+    },
+    {
+      "name": "arc72_getApproved",
+      "args": [{ "type": "uint256" }],
+      "returns": { "type": "address" },
+      "readonly": true
+    },
+    {
+      "name": "arc72_isApprovedForAll",
+      "args": [{ "type": "address" }, { "type": "address" }],
+      "returns": { "type": "bool" },
+      "readonly": true
+    },
+    {
+      "name": "arc72_ownerOf",
+      "args": [{ "type": "uint256" }],
+      "returns": { "type": "address" },
+      "readonly": true
+    },
+    {
+      "name": "arc72_setApprovalForAll",
+      "args": [{ "type": "address" }, { "type": "bool" }],
+      "returns": { "type": "void" }
+    },
+    {
+      "name": "arc72_tokenByIndex",
+      "args": [{ "type": "uint256" }],
+      "returns": { "type": "uint256" },
+      "readonly": true
+    },
+    {
+      "name": "arc72_tokenURI",
+      "args": [{ "type": "uint256" }],
+      "returns": { "type": "byte[256]" },
+      "readonly": true
+    },
+    {
+      "name": "arc72_totalSupply",
+      "args": [],
+      "returns": { "type": "uint256" },
+      "readonly": true
+    },
+    {
+      "name": "arc72_transferFrom",
+      "args": [
+        { "type": "address" },
+        { "type": "address" },
+        { "type": "uint256" }
+      ],
+      "returns": { "type": "void" }
+    },
+    {
+      "name": "burn",
+      "desc": "Burns the specified NFT",
+      "args": [
+        { "type": "uint256", "name": "tokenId", "desc": "The ID of the NFT" }
+      ],
+      "returns": { "type": "void" }
+    },
+    {
+      "name": "highforge_mint",
+      "desc": "Attempts to mint an NFT for the user",
+      "args": [
+        {
+          "type": "uint256",
+          "name": "tempTokenId",
+          "desc": "A unique temporary token ID for the NFT"
+        }
+      ],
+      "returns": {
+        "type": "uint256",
+        "desc": "tokenId - The ID of the NFT that was minted"
+      }
+    },
+    {
+      "name": "highforge_reveal",
+      "desc": "Reveals the NFT",
+      "args": [
+        {
+          "type": "uint256",
+          "name": "tempTokenId",
+          "desc": "The temporary token ID"
+        },
+        {
+          "type": "uint256",
+          "name": "tokenId",
+          "desc": "The actual token ID"
+        },
+        {
+          "type": "byte[256]",
+          "name": "tokenURI",
+          "desc": "The metadata URI for the token"
+        }
+      ],
+      "returns": { "type": "void" }
+    },
+    {
+      "name": "highforge_setupBalance",
+      "desc": "Makes sure that the balance box for the sender is set up",
+      "args": [],
+      "returns": { "type": "void" }
+    },
+    {
+      "name": "updateTokenURI",
+      "desc": "Allows the creator to update the token URI for a token",
+      "args": [
+        { "type": "uint256", "name": "tokenId", "desc": "The ID of the NFT" },
+        {
+          "type": "byte[256]",
+          "name": "tokenURI",
+          "desc": "The metadata URI for the token"
+        }
+      ],
+      "returns": { "type": "void" }
+    }
+  ],
+  "events": [
+    {
+      "name": "arc72_Approval",
+      "args": [
+        { "type": "address" },
+        { "type": "address" },
+        { "type": "uint256" }
+      ]
+    },
+    {
+      "name": "arc72_ApprovalForAll",
+      "args": [{ "type": "address" }, { "type": "address" }, { "type": "bool" }]
+    },
+    {
+      "name": "arc72_Transfer",
+      "args": [
+        { "type": "address" },
+        { "type": "address" },
+        { "type": "uint256" }
+      ]
+    },
+    {
+      "name": "highforge_Mint",
+      "args": [
+        { "type": "address" },
+        { "type": "uint256" },
+        { "type": "uint64" },
+        { "type": "uint64" },
+        { "type": "uint64" }
+      ]
+    },
+    {
+      "name": "highforge_UpdateURI",
+      "args": [{ "type": "uint256" }, { "type": "byte[256]" }]
+    }
+  ]
+}
