@@ -1275,7 +1275,7 @@ tokenURI = ABI_Method(
 
 
 def totalSupplyHandler(_):
-    return abi_return(App.globalGet(Bytes("totalMinted")))
+    return abi_return(Itou256(App.globalGet(Bytes("totalMinted"))))
 
 
 totalSupply = ABI_Method(

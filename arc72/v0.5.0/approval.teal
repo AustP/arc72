@@ -321,8 +321,14 @@ callsub sendalgocoverfee_7
 b main_l36
 main_l48:
 bytec_2 // 0x151f7c75
+intc_2 // 32
+intc_3 // 8
+-
+bzero
 bytec 7 // "totalMinted"
 app_global_get
+itob
+concat
 concat
 log
 intc_1 // 1
